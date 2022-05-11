@@ -27,6 +27,12 @@ alias ger='genie -r'
 alias geb='genie -b'
 
 
+# --- Functions ---
+wcd ()  {
+    cd "$(wslpath -a $1)"
+}
+
+
 # --- Commands ---
 # [[ ! -v INSIDE_GENIE ]] && exec /usr/bin/genie -s
 

@@ -123,10 +123,6 @@ ipatch () {
     unset OLDFILE; unset NEWFILE
 }
 
-wcd ()  {
-    cd "$(wslpath -a $1)"
-}
-
 
 # --- Commands ---
 # thefuck:
