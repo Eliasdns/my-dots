@@ -1,0 +1,4 @@
+
+# --- My customizations ---
+[ -r /opt/my-dots/zsh/zshrc.zsh ] && source /opt/my-dots/zsh/zshrc.zsh
+# --- - ---

@@ -1,0 +1,5 @@
+
+# --- My customizations ---
+[include]
+    path = /opt/my-dots/git/gitconfig
+# --- - ---

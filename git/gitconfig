@@ -1,0 +1,21 @@
+[user]
+    name = Elias Silva
+    email = pro.eliasdns@gmail.com
+[core]
+    autocrlf = input
+    pager = delta
+[color]
+    ui = true
+[merge]
+    tool = vimdiff3
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    features = ansi
+    navigate = true  # use n and N to move between diff sections
+    side-by-side = true
+    line-numbers = true
+

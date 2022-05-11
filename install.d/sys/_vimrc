@@ -1,0 +1,6 @@
+
+" --- My customizations ---
+if filereadable("/opt/my-dots/vim/vimrc.vim")
+  source /opt/my-dots/vim/vimrc.vim
+endif
+" --- - ---

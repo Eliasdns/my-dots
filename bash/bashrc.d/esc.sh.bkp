@@ -1,0 +1,25 @@
+# --- Funcoes ---
+esc () {
+    case $1 in
+        vpn) 
+            ;;
+        'help')
+            esc_help
+            ;;
+        *)
+            echo "[!] Entrada invalida (Atualmente sera aceito apenas os argumentos validos, sem interface inicial)"
+            echo
+            esc_help
+    esac
+}
+
+esc_help () {
+    echo "Modo de usar:
+    esc <modulo> [parametro]
+    
+    Os seguintes modulos sao atualmente suportados:
+    help (Mostrar essa mensagem), list (Listar informacoes dos servicos), ftp, http, sql, vnc, vpn
+    
+    Os seguintes parametro sao atualmente suportados:
+    0 (Parar servico), 1 (Iniciar servico), 2 (Informar estado de execucao)"
+}
