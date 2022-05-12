@@ -7,6 +7,18 @@ export LIBGL_ALWAYS_INDIRECT=1
 
 export GIT_SSH="ssh.exe"
 
+append_path () {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            PATH="${PATH:+$PATH:}$1"
+    esac
+}
+append_path "/mnt/c/Windows/System32/OpenSSH/"
+unset -f append_path
+export PATH
+
 
 # --- Aliases ---
 #alias lping="ping $(ifconfig eth0 | sed -n '2 p' | awk '{print $2}')"
