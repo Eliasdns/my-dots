@@ -54,6 +54,9 @@ Plug 'junegunn/vim-peekaboo'
 
 Plug 'tmux-plugins/vim-tmux'
 
+" Syntax highlighting for kitty.conf:
+Plug 'fladson/vim-kitty'
+
 " PlugClean
 " PlugUpdate
 call plug#end()
