@@ -1,5 +1,9 @@
 # --- Load distro-specific ---
-dir=$(dirname "$0")
+if [ -n "$ZSH_VERSION" ]; then
+    dir=$(dirname "$0")
+else
+    dir=$(dirname "${BASH_SOURCE[0]}")
+fi
 
 # Arch:
 if (cat /etc/*release | grep -q 'arch'); then 
@@ -133,7 +137,12 @@ ipatch () {
 
 # --- Load Others---
 # Depends: find(findutils)
-dir=$(dirname "$0")/bashrc.d/
+if [ -n "$ZSH_VERSION" ]; then
+    dir=$(dirname "$0")/bashrc.d/
+else
+    dir=$(dirname "${BASH_SOURCE[0]}")/bashrc.d/
+fi
+
 if [ -d "$dir" ]; then
     for file in $(find $dir -maxdepth 1 -type f -iname '*.sh'); do
         [ -r "$file" ] && source "$file"
