@@ -12,14 +12,18 @@ alias asearch="pacman -Sl | sed 's/\S* //' | egrep"
 aatualizar() {
     yay -Suuy --noconfirm && aremove
 
-    # asdf update; sudo asdf update
-    asdf plugin-update --all; sudo asdf plugin-update --all
+    sudo snap refresh
+
+    if [ -n "$(which asdf)" ]; then
+        # asdf update; sudo asdf update
+        asdf plugin-update --all; sudo asdf plugin-update --all
+    fi
 
     sudo vim +PlugUpgrade +PlugClean +PlugUpdate +qa
-    vim +PlugUpgrade +PlugClean +PlugUpdate +qa
+    sudo -u $USER vim +PlugUpgrade +PlugClean +PlugUpdate +qa
 
     sudo zsh -ic 'zplug update'
-    zsh -ic 'zplug update'
+    sudo -u $USER zsh -ic 'zplug update'
 
     sudo zsh -ic tmux_atualizar
     zsh -ic tmux_atualizar
