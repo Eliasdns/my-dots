@@ -74,8 +74,9 @@ alias ctree='tree -I ".git|venv" -a -L'
 
 # Tmux:
 # Depends: tmux
-alias tmux_new='tmux new -A -s default'
 #alias tmux_new='tmux a -t default \; new-window || tmux new -s default'
+# alias tmux_new='tmux new -A -s default'
+alias tmux_new='tmux has-session -t default && tmux new || tmux new -s default'
 alias tmux_atualizar='~/.tmux/plugins/tpm/bin/install_plugins; ~/.tmux/plugins/tpm/bin/clean_plugins; ~/.tmux/plugins/tpm/bin/update_plugins all'
 #alias tmux_atualizar="${TMUX_PLUGIN_MANAGER_PATH}tpm/bin/install_plugins; ${TMUX_PLUGIN_MANAGER_PATH}tpm/bin/clean_plugins; ${TMUX_PLUGIN_MANAGER_PATH}tpm/bin/update_plugins all"
 
