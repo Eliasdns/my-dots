@@ -10,7 +10,7 @@ alias asearch="pacman -Sl | sed 's/\S* //' | egrep"
 
 # --- Functions ---
 aatualizar() {
-    sudo pacman -Sy --noconfirm archlinux-keyring && yay -Suu --noconfirm && aremove
+    sudo pacman -Sy --needed --noconfirm archlinux-keyring && yay -Suu --noconfirm && aremove
 
     sudo snap refresh
 
