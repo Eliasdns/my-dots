@@ -10,7 +10,9 @@ alias asearch="pacman -Sl | sed 's/\S* //' | egrep"
 
 # --- Functions ---
 aatualizar() {
-    sudo pacman -Sy --needed --noconfirm archlinux-keyring && yay -Suu --noconfirm && aremove
+    # curl -s https://archlinux.org/mirrorlist/all/https/ | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist
+    reflector --save /etc/pacman.d/mirrorlist --latest 5 --country Brazil  # --protocol https
+    [ $? -eq 0 ] && sudo pacman -Sy --needed --noconfirm archlinux-keyring && yay -Suu --noconfirm && aremove
 
     sudo snap refresh
 
