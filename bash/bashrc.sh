@@ -94,6 +94,9 @@ alias mounted='whiptail --title "Pontos de montagem" --msgbox "$(findmnt -A)" 0 
 # Depends: quota
 alias pquota='quotaon -ap | cut -d" " -f"1,4,5,7" | column -t'
 
+# Depends: fastfetch
+alias ff='fastfetch'
+
 # My global IP:
 alias myip="curl https://icanhazip.com"
 #alias myip="curl https://ipinfo.io/ip; echo"
