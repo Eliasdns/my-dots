@@ -9,6 +9,11 @@ elif (cat /etc/*release | grep -q 'debian'); then
     [ -r "$dir/_debian.zsh" ] && source "$dir/_debian.zsh"
 fi
 
+# Garuda:
+if (cat /etc/*release | grep -q 'garuda'); then 
+    [ -r "$dir/_garuda.zsh" ] && source "$dir/_garuda.zsh"
+fi
+
 # Is't WSL:
 if ! (uname -r | grep -qi 'microsoft'); then 
     [ -r "$dir/_not_wsl.zsh" ] && source "$dir/_not_wsl.zsh"
