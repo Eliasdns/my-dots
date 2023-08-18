@@ -33,11 +33,6 @@ alias cmdc='/mnt/c/Windows/System32/cmd.exe /c'
 # alias xfce='dbus-launch --exit-with-session xfce4-session &'
 alias xfce='pushd ~; dbus-launch --exit-with-session xfce4-session &; popd'
 
-# SystemD Genie
-alias ges='genie -s'
-alias ger='genie -r'
-alias geb='genie -b'
-
 
 # --- Functions ---
 wcd ()  {
@@ -46,5 +41,4 @@ wcd ()  {
 
 
 # --- Commands ---
-# [[ ! -v INSIDE_GENIE ]] && exec /usr/bin/genie -s
 
