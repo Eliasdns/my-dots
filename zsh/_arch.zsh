@@ -1,15 +1,15 @@
 # --- From zsh-users ---
 # Depends: zaw(zaw-git), zsh-syntax-highlighting, zsh-autosuggestions, zsh-history-substring-search
 # Recommends: zsh-completions
-source /usr/share/zaw/zaw.zsh
+[ -r /usr/share/zaw/zaw.zsh ] && source /usr/share/zaw/zaw.zsh
 
 ### Plugins section: Enable fish style features
 ## Use autosuggestion:
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -r /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ## Use syntax highlighting:
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -r /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ## Use history substring search:
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+[ -r /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 
 # --- oh-my-zsh ---
