@@ -10,9 +10,17 @@ alias asearch="pacman -Sl | sed 's/\S* //' | egrep"
 
 # --- Functions ---
 aatualizar() {
+    # https://wiki.archlinux.org/title/Pacman/Package_signing#Troubleshooting
+    # pacman -Sy archlinux-keyring  # blackarch-keyring chaotic-keyring
+    # pacman-key --recv-keys keyid; pacman-key --add /path/to/downloaded/keyfile; pacman-key --finger keyid && pacman-key --lsign-key keyid
+    # rm -rf /etc/pacman.d/gnupg; pacman-key --init; pacman-key --populate; pacman-key --refresh-keys
+    # pacman -Sc  # ; yay -Sc
+    # ntpd -qg; hwclock -w
+    # gpg --homedir /etc/pacman.d/gnupg --list-keys
+
     # curl -s https://archlinux.org/mirrorlist/all/https/ | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist
-    reflector --save /etc/pacman.d/mirrorlist --latest 5 --country Brazil  # --protocol https
-    [ $? -eq 0 ] && sudo pacman -Sy --needed --noconfirm archlinux-keyring && yay -Suu --noconfirm && aremove
+    sudo reflector --save /etc/pacman.d/mirrorlist --latest 5 --country Brazil  # --protocol https
+    [ $? -eq 0 ] && sudo pacman -Sy --needed --noconfirm archlinux-keyring && yay -Suu --noconfirm && aaremove
 
     sudo snap refresh
 
