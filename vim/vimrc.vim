@@ -57,6 +57,8 @@ Plug 'tmux-plugins/vim-tmux'
 " Syntax highlighting for kitty.conf:
 Plug 'fladson/vim-kitty'
 
+Plug 'lambdalisue/suda.vim'
+
 " PlugClean
 " PlugUpdate
 call plug#end()
@@ -136,3 +138,4 @@ runtime macros/matchit.vim
 if match($TERM, "screen")!=-1
   set term=xterm-256color
 endif
+
