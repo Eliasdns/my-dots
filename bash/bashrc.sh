@@ -51,11 +51,12 @@ alias la='ls -a'
 alias lsa='ls -lah'
 #alias ll='ls --color=auto -lah'
 #alias l='ls --color=auto -lah'
-# Depends: exa, colorls
+# Depends: eza, colorls
 # which colorls >&- && alias l='colorls --color=auto --dark --gs -lah'
 alias ll='colorls --color=auto --dark --gs --group-directories-first -lah'
-# alias l='exa --color=auto --icons --git --group-directories-first -la'
-alias l='exa --color=auto --icons --group-directories-first -la'
+# alias l='eza --color=auto --icons --git --group-directories-first -la'
+alias l='eza --color=auto --icons --group-directories-first -la'
+alias lg='l --git'
 
 # Tree:
 # Depends: tree
@@ -64,8 +65,8 @@ alias l='exa --color=auto --icons --group-directories-first -la'
 # alias 3tree='tree -I .git -I venv -a -L 3'
 # alias 4tree='tree -I .git -I venv -a -L 4'
 # alias ctree='tree -I .git -I venv -a -L'
-# Depends: exa
-alias tree='exa -T'
+# Depends: eza
+alias tree='eza -T'
 alias 0tree='tree -I ".git|venv" -a'
 alias 2tree='tree -I ".git|venv" -a -L 2'
 alias 3tree='tree -I ".git|venv" -a -L 3'
