@@ -5,7 +5,7 @@
 # TODO: Se nao tiver "_parcial", insere no final
 # TODO: Se nao tiver "_tail", insere no final
 # TODO: Se nao tiver "_head", insere no inicio
-# TODO: Se --verbose, mostra a diferencia antes de alterar, podendo cancelar
+# TODO: Se (--interactive | --verbose), mostra a diferenca antes de alterar, podendo cancelar
 
 source "$(dirname $0)/_update_config_file.zsh"
 
@@ -24,8 +24,8 @@ update_config_file_head "$config_file" "$partial_file"
 
 # --- kitty:
 mkdir -p ~/.config/kitty
-cp -i ./home/kitty/* ~/.config/kitty
-sudo chown $USER:$USER ~/.config/kitty/*
-sudo chmod 644 ~/.config/kitty/kitty.conf
-sudo chmod 600 ~/.config/kitty/current-theme.conf
+cp -iv $(dirname $0)/home/kitty/* ~/.config/kitty
+sudo chown -v $USER:$USER ~/.config/kitty/*
+sudo chmod -v 644 ~/.config/kitty/kitty.conf
+sudo chmod -v 600 ~/.config/kitty/current-theme.conf
 

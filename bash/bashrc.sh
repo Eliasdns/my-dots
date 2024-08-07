@@ -104,7 +104,7 @@ alias myip="curl https://icanhazip.com"
 #alias myip="curl https://ifconfig.me; echo"
 
 # List connections:
-# Depends: ss
+# Depends: ss(iproute2)
 #alias lconn='sudo netstat -pane'
 alias lconn='sudo ss -pane'
 
