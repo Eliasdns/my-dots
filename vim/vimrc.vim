@@ -49,7 +49,7 @@ Plug 'ryanoasis/vim-devicons'
 " Plug 'tpope/vim-commentary'
 Plug 'tomtom/tcomment_vim'
 
-" Peekaboo will show you the contents of the registers on the sidebar when you hit [...]
+" Show contents of the registers on sidebar when hit " or @ in normal mode or <CTRL-R> in insert mode
 Plug 'junegunn/vim-peekaboo'
 
 Plug 'tmux-plugins/vim-tmux'
