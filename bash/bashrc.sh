@@ -121,6 +121,10 @@ alias gitl='git -P log --oneline --graph --decorate --all'
 # Depends: metasploit
 alias msfc='sudo service postgresql start && sudo msfdb init; sudo msfdb start; sudo msfd && sudo msfconsole'
 
+# cht.sh, tldr, cheat, navi, etc
+alias csshell='cht.sh --shell'
+alias navip='navi --print'
+
 
 # --- Functions ---
 # Depends: vipe(moreutils)
@@ -139,6 +143,15 @@ ipatch () {
 
 # Depends: nvm
 [ -r /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
+
+# Depends: navi
+if [ -n $(which navi) ]; then
+    if [ -n "$ZSH_VERSION" ]; then
+        eval "$(navi widget zsh)"
+    else
+        eval "$(navi widget bash)"
+    fi
+fi
 
 
 # --- Load Others ---
