@@ -147,11 +147,11 @@ bindkey '\C-x\C-e' edit-command-line
 bindkey "^Y" yank
 bindkey "^[y" yank-pop
 
-#--- Aliases úteis:
+#--- Aliases:
 #alias -s txt='vim'
 
 
-# --- Load Others---
+# --- Load Others ---
 # --- bashrc:
 dir=$(dirname "$0")/../bash
 [ -r "$dir/bashrc.sh" ] && source "$dir/bashrc.sh"

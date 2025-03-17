@@ -134,13 +134,14 @@ ipatch () {
 
 
 # --- Commands ---
-# thefuck:
+# Depends: thefuck
 #eval "$(thefuck --alias)"
-# NVM:
+
+# Depends: nvm
 [ -r /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 
 
-# --- Load Others---
+# --- Load Others ---
 # Depends: find(findutils)
 if [ -n "$ZSH_VERSION" ]; then
     dir=$(dirname "$0")/bashrc.d/
