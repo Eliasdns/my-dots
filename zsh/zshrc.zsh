@@ -150,6 +150,9 @@ bindkey "^[y" yank-pop
 #--- Aliases:
 #alias -s txt='vim'
 
+# --- Commands ---
+# Depends: zoxide
+eval "$(zoxide init zsh)"
 
 # --- Load Others ---
 # --- bashrc:
