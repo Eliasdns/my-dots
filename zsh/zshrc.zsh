@@ -138,6 +138,9 @@ export KEYTIMEOUT=3
 # Selects keymap 'viins':
 bindkey -v
 
+# Delete previous word on Ctrl+Backspace (Ctrl+H on this system)
+bindkey '\C-h' backward-kill-word
+
 # Edit the current command line in $EDITOR (like oh-my-zsh keybind on emacs keymap):
 #autoload -U edit-command-line
 #zle -N edit-command-line
