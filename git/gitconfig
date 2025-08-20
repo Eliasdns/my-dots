@@ -1,16 +1,18 @@
 [user]
     name = Elias Silva
     email = pro.eliasdns@gmail.com
+
+# Depends: vim
+[merge]
+    tool = vimdiff3
+    conflictstyle = diff3
+
 # Depends: git-delta
 [core]
     autocrlf = input
     pager = delta
 [color]
     ui = true
-# Depends: vim
-[merge]
-    tool = vimdiff3
-    conflictstyle = diff3
 [diff]
     colorMoved = default
 [interactive]
