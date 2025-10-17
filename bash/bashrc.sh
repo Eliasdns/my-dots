@@ -136,6 +136,22 @@ ipatch () {
     unset OLDFILE; unset NEWFILE
 }
 
+glogby () {
+    local email="$1"
+    local since="$2"
+    local until="$3"
+
+    # --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset"
+    git log \
+        --graph \
+        --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad)%Creset %C(bold blue)<%an> <%ae>%Creset" \
+        --date=iso \
+        --all \
+        --author="$email" \
+        ${since:+--since="$since"} \
+        ${until:+--until="$until"}
+}
+
 
 # --- Commands ---
 # Depends: thefuck
