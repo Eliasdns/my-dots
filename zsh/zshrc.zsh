@@ -65,6 +65,8 @@ plugins+=(
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 
+# zstyle ':omz:lib:directories' aliases no
+
 source $ZSH/oh-my-zsh.sh
 
 # For thefuck:

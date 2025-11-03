@@ -117,6 +117,10 @@ alias 1ping='ping 1.1.1.1'
 # Depends: git
 alias gitl='git -P log --oneline --graph --decorate --all'
 
+# Docker:
+# Depends: git
+alias d="docker"
+
 # Pentest:
 # Depends: metasploit
 alias msfc='sudo service postgresql start && sudo msfdb init; sudo msfdb start; sudo msfd && sudo msfconsole'
