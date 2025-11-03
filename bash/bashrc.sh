@@ -141,10 +141,10 @@ glogby () {
     local since="$2"
     local until="$3"
 
-    # --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset"
+    # --pretty="%Cred%h%Creset %Cgreen(%ar) -%C(auto)%d%Creset %s %C(bold blue)<%an>%Creset"
     git log \
         --graph \
-        --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad)%Creset %C(bold blue)<%an> <%ae>%Creset" \
+        --pretty="%Cred%h%Creset %Cgreen(%ad)%Creset -%C(auto)%d%Creset %s %C(bold blue)<%ae> <%an>%Creset" \
         --date=iso \
         --all \
         --author="$email" \
