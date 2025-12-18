@@ -60,18 +60,18 @@ alias lg='l --git'
 
 # Tree:
 # Depends: tree
-# alias 0tree='tree -I .git -I venv -a'
-# alias 2tree='tree -I .git -I venv -a -L 2'
-# alias 3tree='tree -I .git -I venv -a -L 3'
-# alias 4tree='tree -I .git -I venv -a -L 4'
-# alias ctree='tree -I .git -I venv -a -L'
+# alias 0tree='tree -I .git -I .venv -I venv -a'
+# alias 2tree='tree -I .git -I .venv -I venv -a -L 2'
+# alias 3tree='tree -I .git -I .venv -I venv -a -L 3'
+# alias 4tree='tree -I .git -I .venv -I venv -a -L 4'
+# alias ctree='tree -I .git -I .venv -I venv -a -L'
 # Depends: eza
 alias tree='eza -T'
-alias 0tree='tree -I ".git|venv" -a'
-alias 2tree='tree -I ".git|venv" -a -L 2'
-alias 3tree='tree -I ".git|venv" -a -L 3'
-alias 4tree='tree -I ".git|venv" -a -L 4'
-alias ctree='tree -I ".git|venv" -a -L'
+alias 0tree='tree -I ".git|.venv|venv" -a'
+alias 2tree='tree -I ".git|.venv|venv" -a -L 2'
+alias 3tree='tree -I ".git|.venv|venv" -a -L 3'
+alias 4tree='tree -I ".git|.venv|venv" -a -L 4'
+alias ctree='tree -I ".git|.venv|venv" -a -L'
 
 # Tmux:
 # Depends: tmux
