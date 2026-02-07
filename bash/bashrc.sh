@@ -119,7 +119,7 @@ alias 1ping='ping 1.1.1.1'
 alias gitl='git -P log --oneline --graph --decorate --all'
 
 # Docker:
-# Depends: git
+# Depends: docker
 alias d="docker"
 
 # Pentest:
