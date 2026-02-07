@@ -60,18 +60,18 @@ alias lg='l --git'
 
 # Tree:
 # Depends: tree
-# alias 0tree='tree -I .git -I venv -a'
-# alias 2tree='tree -I .git -I venv -a -L 2'
-# alias 3tree='tree -I .git -I venv -a -L 3'
-# alias 4tree='tree -I .git -I venv -a -L 4'
-# alias ctree='tree -I .git -I venv -a -L'
+# alias 0tree='tree -I .git -I .venv -I venv -a'
+# alias 2tree='tree -I .git -I .venv -I venv -a -L 2'
+# alias 3tree='tree -I .git -I .venv -I venv -a -L 3'
+# alias 4tree='tree -I .git -I .venv -I venv -a -L 4'
+# alias ctree='tree -I .git -I .venv -I venv -a -L'
 # Depends: eza
 alias tree='eza -T'
-alias 0tree='tree -I ".git|venv" -a'
-alias 2tree='tree -I ".git|venv" -a -L 2'
-alias 3tree='tree -I ".git|venv" -a -L 3'
-alias 4tree='tree -I ".git|venv" -a -L 4'
-alias ctree='tree -I ".git|venv" -a -L'
+alias 0tree='tree -I ".git|.venv|venv" -a'
+alias 2tree='tree -I ".git|.venv|venv" -a -L 2'
+alias 3tree='tree -I ".git|.venv|venv" -a -L 3'
+alias 4tree='tree -I ".git|.venv|venv" -a -L 4'
+alias ctree='tree -I ".git|.venv|venv" -a -L'
 
 # Tmux:
 # Depends: tmux
@@ -117,6 +117,10 @@ alias 1ping='ping 1.1.1.1'
 # Depends: git
 alias gitl='git -P log --oneline --graph --decorate --all'
 
+# Docker:
+# Depends: git
+alias d="docker"
+
 # Pentest:
 # Depends: metasploit
 alias msfc='sudo service postgresql start && sudo msfdb init; sudo msfdb start; sudo msfd && sudo msfconsole'
@@ -134,6 +138,22 @@ ipatch () {
     diff --color "$OLDFILE" "$NEWFILE" | bat --file-name "$OLDFILE <- $NEWFILE"
     diff -e "$OLDFILE" "$NEWFILE" | vipe | patch -be "$OLDFILE"
     unset OLDFILE; unset NEWFILE
+}
+
+glogby () {
+    local email="$1"
+    local since="$2"
+    local until="$3"
+
+    # --pretty="%Cred%h%Creset %Cgreen(%ar) -%C(auto)%d%Creset %s %C(bold blue)<%an>%Creset"
+    git log \
+        --graph \
+        --pretty="%Cred%h%Creset %Cgreen(%ad)%Creset -%C(auto)%d%Creset %s %C(bold blue)<%ae> <%an>%Creset" \
+        --date=iso \
+        --all \
+        --author="$email" \
+        ${since:+--since="$since"} \
+        ${until:+--until="$until"}
 }
 
 
