@@ -1,12 +1,6 @@
-# git config --show-origin -l
-
 [user]
     name = Elias Silva
     email = pro.eliasdns@gmail.com
-
-[core]
-    fsync = all
-    fsyncMethod = batch
 
 # Depends: vim
 [merge]
