@@ -165,7 +165,7 @@ glogby () {
 [ -r /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 
 # Depends: navi
-if [ -n $(which navi) ]; then
+if $(which navi); then
     if [ -n "$ZSH_VERSION" ]; then
         eval "$(navi widget zsh)"
     else
