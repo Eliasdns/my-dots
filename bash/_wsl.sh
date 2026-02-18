@@ -45,5 +45,5 @@ wcd ()  {
 # https://github.com/microsoft/WSL/issues/5851
 # https://github.com/microsoft/WSL/issues/5177
 # https://github.com/microsoft/WSL/issues/4577#issuecomment-545192865
-[ ! -d /mnt/wsl/wsl_shared ] && wsl.exe --mount C:\\PASTAS_WIN\\wsl_shared.vhdx --vhd --partition 1 --type btrfs --options 'noatime,discard=async,ssd' --name wsl_shared > /dev/null
+[ ! -d /mnt/wsl/wsl_shared ] && wsl.exe --mount C:\\PASTAS_WIN\\Storages\\WSL\\wsl_shared.vhdx --vhd --partition 1 --type btrfs --options 'noatime,discard=async,ssd' --name wsl_shared > /dev/null
 
