@@ -1,8 +1,10 @@
 # --- Load distro-specific ---
-if [ -n "$ZSH_VERSION" ]; then
+if [ -n "$BASH_VERSION" ]; then
+    dir=$(dirname "${BASH_SOURCE[0]}")
+elif [ -n "$ZSH_VERSION" ]; then
     dir=$(dirname "$0")
 else
-    dir=$(dirname "${BASH_SOURCE[0]}")
+    dir=$(dirname "$0")
 fi
 
 # Arch:
@@ -19,7 +21,7 @@ if (uname -r | grep -qi 'microsoft'); then
     [ -r "$dir/_wsl.sh" ] && source "$dir/_wsl.sh"
 fi
 
-unset dir
+# unset dir
 
 
 # --- Env Vars ---
@@ -29,7 +31,22 @@ unset dir
 export EDITOR="$(which vim)"
 #export VISUAL=kate
 export LESS="-FRXK --mouse --wheel-lines=3 $LESS"
-[ -d $HOME/.local/bin ] && export PATH="$PATH:$HOME/.local/bin"
+
+append_path () {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            PATH="${PATH:+$PATH:}$1"
+    esac
+}
+append_path "$HOME/.local/bin"
+append_path $(realpath "$dir/../bin")
+export PATH
+unset -f append_path
+
+
+unset dir
 
 
 # --- Aliases ---
