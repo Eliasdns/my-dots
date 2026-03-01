@@ -59,8 +59,8 @@ alias ls='ls --color=auto'
 # Sudo:
 alias _='sudo'
 alias sud='sudo -i'
-alias sur='sudo -u root zsh'
-alias sue='sudo -u \#1000 zsh'
+alias sur='sudo -u root $SHELL'
+alias sue='sudo -u \#1000 $SHELL'
 
 # ls:
 alias ls='ls --color=auto'
