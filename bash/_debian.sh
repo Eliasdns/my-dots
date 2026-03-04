@@ -13,7 +13,7 @@ alias bat='batcat'
 
 # --- Functions ---
 function aatualizar () {
-    sudo apt update && sudo apt full-upgrade -y --allow-downgrades && sudo apt autoremove -y
+    sudo apt update && sudo apt upgrade -y --allow-downgrades && sudo apt autoremove -y
     sudo apt install -f -y
 
     sudo snap refresh
