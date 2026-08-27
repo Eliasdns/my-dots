@@ -99,10 +99,6 @@ alias tmux_new='tmux has-session -t default && tmux new || tmux new -s default'
 alias tmux_atualizar='~/.tmux/plugins/tpm/bin/install_plugins; ~/.tmux/plugins/tpm/bin/clean_plugins; ~/.tmux/plugins/tpm/bin/update_plugins all'
 #alias tmux_atualizar="${TMUX_PLUGIN_MANAGER_PATH}tpm/bin/install_plugins; ${TMUX_PLUGIN_MANAGER_PATH}tpm/bin/clean_plugins; ${TMUX_PLUGIN_MANAGER_PATH}tpm/bin/update_plugins all"
 
-# pip:
-# Depends: pip
-alias pip-atualizar='pip list --format=freeze | cut -d= -f1 | xargs -n1 pip install -U'
-
 # Pontos de montagem:
 # Depens: whiptail(libnewt)
 #alias mounted='cat /proc/mounts | column -t'
@@ -138,6 +134,10 @@ alias gitl='git -P log --oneline --graph --decorate --all'
 # Docker:
 # Depends: docker
 alias d="docker"
+
+# pip:
+# Depends: pip
+alias pip-atualizar='pip list --format=freeze | cut -d= -f1 | xargs -n1 pip install -U'
 
 # Pentest:
 # Depends: metasploit
