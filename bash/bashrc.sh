@@ -139,6 +139,11 @@ alias d="docker"
 # Depends: pip
 alias pip-atualizar='pip list --format=freeze | cut -d= -f1 | xargs -n1 pip install -U'
 
+# mise
+alias m='mise'
+alias mr='mise run'
+alias mx='mise exec --'
+
 # Pentest:
 # Depends: metasploit
 alias msfc='sudo service postgresql start && sudo msfdb init; sudo msfdb start; sudo msfd && sudo msfconsole'
