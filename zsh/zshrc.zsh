@@ -159,6 +159,11 @@ bindkey "^[y" yank-pop
 # Depends: zoxide
 [ -n "$(which zoxide)" ] && eval "$(zoxide init zsh)"
 
+# Depends: mise
+# $ sudo mise completion zsh > /usr/local/share/zsh/site-functions/_mise
+# [ -n "$(which mise)" ] && eval "$(mise activate zsh)"
+[ -n "$(which mise)" ] && eval "$(mise activate zsh --shims)"
+
 # --- Load Others ---
 # --- bashrc:
 dir=$(dirname "$0")/../bash
