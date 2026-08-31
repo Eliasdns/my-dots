@@ -157,7 +157,7 @@ bindkey "^[y" yank-pop
 
 # --- Commands ---
 # Depends: zoxide
-eval "$(zoxide init zsh)"
+[ -n "$(which zoxide)" ] && eval "$(zoxide init zsh)"
 
 # --- Load Others ---
 # --- bashrc:
