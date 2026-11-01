@@ -19,15 +19,18 @@ aatualizar() {
     # gpg --homedir /etc/pacman.d/gnupg --list-keys
 
     # curl -s https://archlinux.org/mirrorlist/all/https/ | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist
-    sudo reflector --save /etc/pacman.d/mirrorlist --latest 5 --country Brazil  # --protocol https
-    [ $? -eq 0 ] && sudo pacman -Sy --needed --noconfirm archlinux-keyring && yay -Suu --noconfirm && aaremove
+    
+    # sudo reflector --save /etc/pacman.d/mirrorlist --latest 5 --country Brazil  # --protocol https
+    # [ $? -eq 0 ] && sudo pacman -Sy --needed --noconfirm archlinux-keyring && yay -Suu --noconfirm && aaremove
+    sudo pacman -Sy --needed --noconfirm archlinux-keyring && yay -Suu --noconfirm && aaremove
 
-    sudo snap refresh
+    which snap >/dev/null 2>&1 && sudo snap refresh
 
-    if [ -n "$(which asdf)" ]; then
-        # asdf update; sudo asdf update
-        asdf plugin-update --all; sudo asdf plugin-update --all
-    fi
+    # TODO: mise self-update and update the tools
+    # if [ -n "$(which asdf)" ]; then
+    #     # asdf update; sudo asdf update
+    #     asdf plugin-update --all; sudo asdf plugin-update --all
+    # fi
 
     sudo vim +PlugUpgrade +PlugClean +PlugUpdate +qa
     sudo -u $USER vim +PlugUpgrade +PlugClean +PlugUpdate +qa
