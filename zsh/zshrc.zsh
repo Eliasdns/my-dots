@@ -13,6 +13,10 @@ fi
 if (cat /etc/*release | grep -q 'garuda'); then 
     [ -r "$dir/_garuda.zsh" ] && source "$dir/_garuda.zsh"
 fi
+# CachyOS:
+if (cat /etc/*release | grep -q 'cachyos'); then
+    [ -r "$dir/_cachyos.zsh" ] && source "$dir/_cachyos.zsh"
+fi
 
 # Is't WSL:
 if ! (uname -r | grep -qi 'microsoft'); then 
