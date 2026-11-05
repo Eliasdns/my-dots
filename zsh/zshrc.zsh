@@ -1,8 +1,3 @@
-# --- Load bashrc ---
-dir=$(dirname "$0")/../bash
-[ -r "$dir/bashrc.sh" ] && source "$dir/bashrc.sh"
-# unset dir
-
 # --- Load distro-specific ---
 dir=$(dirname "$0")
 
@@ -183,5 +178,10 @@ if [ -d "$dir" ]; then
     done
     unset file
 fi
+# unset dir
+
+# --- bashrc:
+dir=$(dirname "$0")/../bash
+[ -r "$dir/bashrc.sh" ] && source "$dir/bashrc.sh"
 unset dir
 
