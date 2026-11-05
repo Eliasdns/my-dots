@@ -57,7 +57,7 @@ alias cp='cp -i'
 alias ls='ls --color=auto'
 
 # Sudo:
-alias _='sudo'
+alias s='sudo'
 alias sud='sudo -i'
 alias sur='sudo -u root $SHELL'
 alias sue='sudo -u \#1000 $SHELL'
