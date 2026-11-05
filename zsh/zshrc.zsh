@@ -1,3 +1,8 @@
+# --- Load bashrc ---
+dir=$(dirname "$0")/../bash
+[ -r "$dir/bashrc.sh" ] && source "$dir/bashrc.sh"
+# unset dir
+
 # --- Load distro-specific ---
 dir=$(dirname "$0")
 
@@ -169,11 +174,6 @@ bindkey "^[y" yank-pop
 [ -n "$(which mise)" ] && eval "$(mise activate zsh --shims)"
 
 # --- Load Others ---
-# --- bashrc:
-dir=$(dirname "$0")/../bash
-[ -r "$dir/bashrc.sh" ] && source "$dir/bashrc.sh"
-# unset dir
-
 # --- zshrc.d:
 #dir=${0%/*}
 dir=$(dirname "$0")/zshrc.d
