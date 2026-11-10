@@ -166,7 +166,8 @@ bindkey "^[y" yank-pop
 # Depends: mise
 # $ sudo mise completion zsh > /usr/local/share/zsh/site-functions/_mise
 # [ -n "$(which mise)" ] && eval "$(mise activate zsh)"
-[ -n "$(which mise)" ] && eval "$(mise activate zsh --shims)"
+# It’s already done by '../bash/bashrc.d/mise_shims_path.sh'
+# [ -n "$(which mise)" ] && eval "$(mise activate zsh --shims)"
 
 # --- Load Others ---
 # --- zshrc.d:
